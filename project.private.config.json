@@ -20,38 +20,5 @@
     "ignoreDevUnusedFiles": true
   },
   "libVersion": "3.10.3",
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/admin/admin",
-          "pathName": "pages/admin/admin",
-          "query": "",
-          "scene": null,
-          "launchMode": "default"
-        },
-        {
-          "name": "pages/choose/choose",
-          "pathName": "pages/choose/choose",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/result/result",
-          "pathName": "pages/result/result",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/index/index",
-          "pathName": "pages/logs/logs",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
-    }
-  }
+  "condition": {}
 }

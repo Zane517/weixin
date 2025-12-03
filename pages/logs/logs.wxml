@@ -1,3 +1,4 @@
+<!-- pages/logs/logs.wxml -->
 <view class="my-container">
   <form bindsubmit="handleFormSubmit" class="form-wrapper">
     <view class="form-item">
@@ -11,7 +12,7 @@
       />
     </view>
 
-    <!-- 班级改为学号 -->
+    <!-- 学号（必选） -->
     <view class="form-item">
       <label class="form-label required">学号:</label>
       <input 
@@ -20,12 +21,14 @@
         type="text" 
         placeholder="请输入学号" 
         trim="true"
+        required
       />
     </view>
 
+    <!-- 性别（必选） -->
     <view class="form-item">
-      <label class="form-label">性别:</label>
-      <radio-group class="radio-group" name="gender">
+      <label class="form-label required">性别:</label>
+      <radio-group class="radio-group" name="gender" required>
         <label class="radio-label">
           <radio value="男" color="#2f54eb" /> 男
         </label>
@@ -35,9 +38,10 @@
       </radio-group>
     </view>
 
+    <!-- 爱好（必选，至少两个） -->
     <view class="form-item">
       <label class="form-label required">爱好:</label>
-      <checkbox-group class="checkbox-group" name="hobby">
+      <checkbox-group class="checkbox-group" name="hobby" required>
         <label class="checkbox-label">
           <checkbox value="听音乐" color="#2f54eb" /> 听音乐
         </label>

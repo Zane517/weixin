@@ -1,3 +1,4 @@
+// pages/logs/logs.js
 Page({
   handleFormSubmit(e) {
     console.log("触发提交了！");
@@ -16,7 +17,7 @@ Page({
       return;
     }
 
-    // 2. 校验学号（去除空格后不可为空）
+    // 2. 校验学号（必选，去除空格后不可为空）
     const studentId = formData.studentId?.trim();
     if (!studentId) {
       wx.showToast({
@@ -28,7 +29,7 @@ Page({
       return;
     }
 
-    // 3. 校验性别（必须选择）
+    // 3. 校验性别（必选，必须选择）
     const gender = formData.gender;
     if (!gender) {
       wx.showToast({
@@ -40,7 +41,7 @@ Page({
       return;
     }
 
-    // 4. 强化校验：爱好至少选择2个
+    // 4. 校验爱好（必选，至少选择2个）
     const hobby = formData.hobby;
     if (!hobby || hobby.length < 2) {
       wx.showToast({
@@ -52,7 +53,7 @@ Page({
       return;
     }
 
-    // 所有校验通过，跳转至分配页面（参数改为studentId）
+    // 所有校验通过，跳转至分配页面
     wx.navigateTo({
       url: `../choose/choose?` +
         `userName=${encodeURIComponent(formData.username)}&` +
