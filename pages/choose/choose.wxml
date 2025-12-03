@@ -1,0 +1,81 @@
+<view class="choose-container">
+  <!-- 页面标题 -->
+  <view class="page-title">
+    <text>宿舍分配系统</text>
+  </view>
+
+  <!-- 收集状态提示 -->
+  <view class="collection-status">
+    <text class="status-text">
+      📊 当前已收集 {{collectedUsers.length}}/20 人信息 | 剩余名额：{{remainingQuota}} 个
+    </text>
+    <text class="status-desc" wx:if="{{!isCollectionComplete && !isAssigned}}">
+      ⚠️ 数据未收集完整，已提交信息的用户请等待分配
+    </text>
+    <text class="status-desc" wx:if="{{isCollectionComplete && !isAssigned}}">
+      ✅ 20人数据收集完毕，即将自动分配宿舍...
+    </text>
+  </view>
+
+  <!-- 待分配人员信息卡片 -->
+  <view class="user-card">
+    <text class="card-title">你的提交信息</text>
+    <view class="user-info">
+      <image 
+        src="{{userAvatar}}" 
+        class="avatar"
+      ></image>
+      <view class="info-detail">
+        <view class="name">{{userName || '未完善姓名'}}</view>
+        <!-- 班级改为学号 -->
+        <view class="base-info">
+          <text>学号：{{studentId || '未填写'}}</text>
+          <text>性别：{{userGender || '未选择'}}</text>
+        </view>
+        <!-- 爱好标签展示 -->
+        <view class="hobby-container">
+          <text class="hobby-label">爱好：</text>
+          <view class="hobby-tag-container">
+            <block wx:for="{{userHobby}}" wx:key="index" wx:for-item="hobby">
+              <view class="hobby-tag">{{hobby}}</view>
+            </block>
+            <view wx:if="{{userHobby.length === 0}}" class="no-hobby">未选择</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 个人分配结果卡片（已分配时显示） -->
+  <block wx:if="{{isAssigned}}">
+    <view class="assign-result-card">
+      <text class="result-title">✅ 你的宿舍分配结果</text>
+      <view class="result-info">
+        <image src="{{userAvatar}}" class="result-avatar"></image>
+        <view class="result-detail">
+          <view class="result-dorm">
+            <text>分配宿舍：</text>
+            <text style="font-size: 28rpx; font-weight: 600; color: #008489;">{{assignedDormNum}}宿舍</text>
+            <text> | 室友：{{roommateCount}}人</text>
+          </view>
+          <button bindtap="goToResultDetail" class="detail-btn">查看宿舍详情</button>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 功能按钮区（测试用） -->
+  <view class="btn-group" wx:if="{{isCollectionComplete && !isAssigned}}">
+    <button 
+      bindtap="handleTriggerAssign"
+      class="btn assign-btn"
+    >
+      手动触发宿舍分配
+    </button>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="footer-tip">
+    <text>📝 提示：请等待所有20人提交信息后，系统将自动按爱好匹配分配宿舍</text>
+  </view>
+</view>

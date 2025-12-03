@@ -1,0 +1,352 @@
+/* 全局样式重置与基础配置 */
+page {
+  background-color: #f5f7fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding-bottom: 40rpx;
+}
+
+/* 页面容器 - 居中布局 + 间距控制 */
+.choose-container {
+  padding: 30rpx 24rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 页面标题 - 突出显示 */
+.page-title {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding: 16rpx 0;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 60rpx;
+  height: 6rpx;
+  background: linear-gradient(90deg, #4299e1, #38b2ac);
+  border-radius: 3rpx;
+  margin: 12rpx auto 0;
+}
+
+.page-title text {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #2d3748;
+  letter-spacing: 2rpx;
+}
+
+/* 用户信息卡片 - 卡片式设计 + 阴影效果 */
+.user-card {
+  background: #ffffff;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 36rpx;
+  box-sizing: border-box;
+}
+
+.card-title {
+  font-size: 26rpx;
+  color: #4a5568;
+  display: block;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.card-title::before {
+  content: "";
+  display: inline-block;
+  width: 8rpx;
+  height: 26rpx;
+  background: #4299e1;
+  border-radius: 4rpx;
+  margin-right: 12rpx;
+}
+
+/* 用户信息布局 - 弹性适配 */
+.user-info {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4rpx solid #f0f8fb;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.info-detail {
+  flex: 1;
+  min-width: 240rpx;
+  padding: 8rpx 0;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 12rpx;
+  display: flex;
+  align-items: center;
+}
+
+.name::after {
+  content: "已完善";
+  font-size: 20rpx;
+  font-weight: normal;
+  color: #48bb78;
+  background: #f0fdf4;
+  padding: 2rpx 12rpx;
+  border-radius: 16rpx;
+  margin-left: 12rpx;
+}
+
+.base-info {
+  font-size: 24rpx;
+  color: #718096;
+  line-height: 1.6;
+  margin-bottom: 16rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.base-info text {
+  display: flex;
+  align-items: center;
+}
+
+.base-info text::before {
+  content: "";
+  display: inline-block;
+  width: 6rpx;
+  height: 6rpx;
+  background: #cbd5e0;
+  border-radius: 50%;
+  margin-right: 8rpx;
+  vertical-align: middle;
+}
+
+/* 爱好标签容器 - 美观排版 */
+.hobby-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12rpx 0;
+  margin-top: 8rpx;
+}
+
+.hobby-label {
+  font-size: 24rpx;
+  color: #718096;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+  padding-top: 4rpx;
+}
+
+.hobby-tag-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+  align-items: center;
+  flex: 1;
+}
+
+.hobby-tag {
+  background-color: #e8f4f8;
+  color: #2b6cb0;
+  font-size: 22rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 24rpx;
+  white-space: nowrap;
+  box-shadow: 0 2rpx 6rpx rgba(43, 108, 176, 0.08);
+  transition: all 0.2s ease;
+}
+
+.hobby-tag:active {
+  transform: scale(0.96);
+  box-shadow: 0 1rpx 3rpx rgba(43, 108, 176, 0.1);
+}
+
+.no-hobby {
+  font-size: 24rpx;
+  color: #a0aec0;
+  background: #f8f8f8;
+  padding: 8rpx 20rpx;
+  border-radius: 24rpx;
+}
+
+/* 分配结果卡片 - 高亮显示 */
+.assign-result-card {
+  background: linear-gradient(135deg, #e8f4f8 0%, #f0f8fb 100%);
+  padding: 30rpx;
+  border-radius: 16rpx;
+  margin-bottom: 36rpx;
+  border: 1rpx solid #dee2e6;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.assign-result-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8rpx;
+  height: 100%;
+  background: linear-gradient(180deg, #4299e1, #38b2ac);
+}
+
+.result-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2b6cb0;
+  display: block;
+  margin-bottom: 20rpx;
+  padding-left: 8rpx;
+}
+
+.result-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 20rpx;
+  flex-wrap: wrap;
+  padding-left: 8rpx;
+}
+
+.result-avatar {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3rpx solid #ffffff;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.result-detail {
+  flex: 1;
+  min-width: 240rpx;
+}
+
+.result-dorm {
+  font-size: 26rpx;
+  color: #2d3748;
+  line-height: 1.8;
+}
+
+.result-dorm text:nth-child(2) {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #2b6cb0;
+  margin: 0 12rpx;
+  text-shadow: 0 1rpx 2rpx rgba(43, 108, 176, 0.1);
+}
+
+.result-dorm text:nth-child(3) {
+  color: #718096;
+  font-size: 24rpx;
+}
+
+/* 功能按钮组 - 突出核心操作 */
+.btn-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  margin-bottom: 36rpx;
+  box-sizing: border-box;
+}
+
+.btn {
+  height: 92rpx;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  line-height: 92rpx;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+  box-shadow: 0 4rpx 16rpx rgba(66, 153, 225, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 2rpx 8rpx rgba(66, 153, 225, 0.15);
+}
+
+.auto-assign {
+  background: linear-gradient(90deg, #4299e1, #38b2ac);
+  color: white;
+  border: none;
+}
+
+/* 宿舍状态提示 - 醒目提示 */
+.dorm-status {
+  background: #fef7fb;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  border-left: 4rpx solid #ed8936;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.dorm-status text {
+  font-size: 24rpx;
+  color: #ed8936;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+}
+
+.dorm-status text::before {
+  content: "⚠️";
+  margin-right: 12rpx;
+  font-size: 28rpx;
+}
+
+/* 适配小屏幕（320px以下） */
+@media (max-width: 320px) {
+  .avatar {
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  .name {
+    font-size: 28rpx;
+  }
+
+  .btn {
+    height: 84rpx;
+    font-size: 28rpx;
+  }
+
+  .hobby-tag {
+    padding: 6rpx 16rpx;
+    font-size: 20rpx;
+  }
+}
+
+/* 适配大屏幕（480px以上） */
+@media (min-width: 480px) {
+  .choose-container {
+    max-width: 500rpx;
+    margin: 0 auto;
+  }
+
+  .user-card, .assign-result-card {
+    padding: 36rpx;
+  }
+}

@@ -1,0 +1,170 @@
+.result-container {
+  padding: 30rpx 24rpx;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 宿舍卡片样式 */
+.dorm-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.dorm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.dorm-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.member-count {
+  font-size: 24rpx;
+  color: #718096;
+  background: #f7fafc;
+  padding: 4rpx 16rpx;
+  border-radius: 16rpx;
+}
+
+/* 室友列表样式 */
+.roommates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.roommate-item {
+  display: flex;
+  gap: 20rpx;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  background: #f7fafc;
+  align-items: center;
+}
+
+.roommate-item.current-user {
+  background: #edf2f7;
+  border: 1rpx solid #cbd5e0;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 8rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.current-tag {
+  font-size: 20rpx;
+  color: #4299e1;
+  background: #ebf8ff;
+  padding: 2rpx 12rpx;
+  border-radius: 12rpx;
+}
+
+.student-id, .gender {
+  font-size: 22rpx;
+  color: #718096;
+  margin-bottom: 6rpx;
+}
+
+/* 爱好标签样式 */
+.hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 8rpx;
+}
+
+.hobby-tag {
+  font-size: 20rpx;
+  color: #4a5568;
+  background: #e2e8f0;
+  padding: 4rpx 14rpx;
+  border-radius: 14rpx;
+}
+
+/* 匹配度分析样式 */
+.match-analysis {
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  padding: 30rpx;
+}
+
+.analysis-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2d3748;
+  display: block;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.analysis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.analysis-item {
+  padding: 16rpx;
+  background: #f7fafc;
+  border-radius: 12rpx;
+}
+
+.roommate-name {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.match-rate {
+  font-size: 22rpx;
+  color: #48bb78;
+}
+
+.common-hobbies {
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: #718096;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  align-items: center;
+}
+
+.common-tag {
+  color: #2b6cb0;
+  background: #e8f4f8;
+  padding: 2rpx 12rpx;
+  border-radius: 12rpx;
+  font-size: 20rpx;
+}

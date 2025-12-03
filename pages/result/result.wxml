@@ -1,0 +1,51 @@
+<view class="result-container">
+  <!-- 宿舍信息卡片 -->
+  <view class="dorm-card">
+    <view class="dorm-header">
+      <text class="dorm-title">{{dormNum}} 宿舍分配详情</text>
+      <text class="member-count">共 {{dormMembers.length}} 人</text>
+    </view>
+
+    <!-- 室友列表 -->
+    <view class="roommates-list">
+      <block wx:for="{{dormMembers}}" wx:key="id">
+        <view class="roommate-item {{item.isCurrentUser ? 'current-user' : ''}}">
+          <image src="{{item.avatar}}" class="avatar"></image>
+          <view class="info">
+            <view class="name">
+              <text>{{item.name}}</text>
+              <text wx:if="{{item.isCurrentUser}}" class="current-tag">自己</text>
+            </view>
+            <view class="student-id">学号：{{item.studentId}}</view>
+            <view class="gender">性别：{{item.gender}}</view>
+            <!-- 爱好标签 -->
+            <view class="hobby-tags">
+              <block wx:for="{{item.hobby}}" wx:key="index">
+                <view class="hobby-tag">{{item}}</view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 匹配度分析 -->
+  <view class="match-analysis" wx:if="{{matchAnalysis.length > 0}}">
+    <text class="analysis-title">室友匹配度分析</text>
+    <view class="analysis-list">
+      <block wx:for="{{matchAnalysis}}" wx:key="index">
+        <view class="analysis-item">
+          <text class="roommate-name">{{item.roommateName}}：</text>
+          <text class="match-rate">共同爱好 {{item.commonHobbies.length}} 个（匹配度 {{item.matchRate}}%）</text>
+          <view class="common-hobbies">
+            <text>共同爱好：</text>
+            <block wx:for="{{item.commonHobbies}}" wx:key="hobby">
+              <text class="common-tag">{{item}}</text>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

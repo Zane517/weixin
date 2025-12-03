@@ -1,0 +1,67 @@
+<view class="my-container">
+  <form bindsubmit="handleFormSubmit" class="form-wrapper">
+    <view class="form-item">
+      <label class="form-label">姓名:</label>
+      <input 
+        class="form-input" 
+        name="username" 
+        type="text" 
+        placeholder="请输入姓名" 
+        trim="true"
+      />
+    </view>
+
+    <!-- 班级改为学号 -->
+    <view class="form-item">
+      <label class="form-label required">学号:</label>
+      <input 
+        class="form-input" 
+        name="studentId" 
+        type="text" 
+        placeholder="请输入学号" 
+        trim="true"
+      />
+    </view>
+
+    <view class="form-item">
+      <label class="form-label">性别:</label>
+      <radio-group class="radio-group" name="gender">
+        <label class="radio-label">
+          <radio value="男" color="#2f54eb" /> 男
+        </label>
+        <label class="radio-label">
+          <radio value="女" color="#2f54eb" /> 女
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="form-item">
+      <label class="form-label required">爱好:</label>
+      <checkbox-group class="checkbox-group" name="hobby">
+        <label class="checkbox-label">
+          <checkbox value="听音乐" color="#2f54eb" /> 听音乐
+        </label>
+        <label class="checkbox-label">
+          <checkbox value="动漫" color="#2f54eb" /> 动漫
+        </label>
+        <label class="checkbox-label">
+          <checkbox value="游戏" color="#2f54eb" /> 游戏
+        </label>
+        <label class="checkbox-label">
+          <checkbox value="篮球" color="#2f54eb" /> 篮球
+        </label>
+        <label class="checkbox-label">
+          <checkbox value="乒乓球" color="#2f54eb" /> 乒乓球
+        </label>
+      </checkbox-group>
+      <text class="form-tip">⚠️ 请至少选择2个爱好</text>
+    </view>
+
+    <button 
+      formType="submit" 
+      class="submit-btn"
+    >
+      提交信息
+    </button>
+  </form>
+</view>

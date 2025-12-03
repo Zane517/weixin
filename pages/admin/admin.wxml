@@ -1,0 +1,47 @@
+<view class="admin-container" wx:if="{{hasPermission}}">
+  <!-- 管理员标识 -->
+  <view class="admin-header">
+    <text class="admin-title">管理员视图</text>
+    <text class="admin-desc">当前共 {{dormitories.length}} 间宿舍 | 总人数：{{totalStudents}} 人</text>
+  </view>
+
+  <!-- 宿舍列表 -->
+  <view class="dorm-list">
+    <block wx:for="{{dormitories}}" wx:key="dormNum">
+      <view class="dorm-card">
+        <view class="dorm-header">
+          <text class="dorm-number">{{item.dormNum}} 宿舍</text>
+          <text class="member-count">{{item.members.length}} 人</text>
+        </view>
+        
+        <!-- 宿舍成员列表 -->
+        <view class="member-list">
+          <block wx:for="{{item.members}}" wx:key="id" wx:for-item="member">
+            <view class="member-item">
+              <image src="{{member.avatar}}" class="member-avatar"></image>
+              <view class="member-info">
+                <view class="member-name">{{member.name}}</view>
+                <view class="member-details">
+                  <text>学号：{{member.studentId}}</text>
+                  <text>性别：{{member.gender}}</text>
+                </view>
+                <!-- 爱好标签 -->
+                <view class="hobby-tags">
+                  <block wx:for="{{member.hobby}}" wx:key="index">
+                    <view class="hobby-tag">{{item}}</view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view wx:if="{{item.members.length === 0}}" class="empty-dorm">
+            暂无分配成员
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="no-permission" wx:else>
+  <text>无管理员权限，正在返回...</text>
+</view>
