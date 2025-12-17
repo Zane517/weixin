@@ -1,4 +1,3 @@
-// pages/logs/logs.js
 Page({
   handleFormSubmit(e) {
     console.log("触发提交了！");
@@ -17,11 +16,21 @@ Page({
       return;
     }
 
-    // 2. 校验学号（必选，去除空格后不可为空）
+    // 2. 校验学号（必选 + 11位数字正则校验）
     const studentId = formData.studentId?.trim();
+    // 定义11位数字的正则表达式
+    const studentIdReg = /^\d{11}$/;
     if (!studentId) {
       wx.showToast({
         title: "请输入学号",
+        icon: "none",
+        duration: 1500,
+        mask: true
+      });
+      return;
+    } else if (!studentIdReg.test(studentId)) {
+      wx.showToast({
+        title: "学号必须为11位数字",
         icon: "none",
         duration: 1500,
         mask: true
